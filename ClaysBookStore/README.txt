@@ -89,4 +89,56 @@ new title was applied.
 
 Strating 1.4 Add Projects & Modify 
 
+Created three new projects nameed:
+
+ClaysBooks.DataAccess
+ClaysBooks.Models
+ClaysBooks.Utiliy
+
+Copied my Data folder and pasted it in the ClaysBooks.DataAccess folder 
+and deleted the original
+
+Installed 
+
+Microsoft.EntityFramework.Core.Relational and Microsoft.Core.SqlServer packages
+
+Deleted my migrations folder 
+
+-------------------------------------------------------------
+|5:20PM	⏰			📅 2023-10-25 			    
+-------------------------------------------------------------
+
+Installed 
+
+Microsoft.Identity.EntityFramework
+
+Updated namespace to "namespace ClaysBookStore.DataAccess.Data" in ApplicationDbContext.cs
+
+Deleted default Class1.cs files in all projects
+
+Build ClaysBooks.DataAccess, Build successful
+
+Moved Models folder into ClaysBooks.Models and deleted the original.
+
+Added project reference - .DataAccess and .Models
+
+Renamed Models folder to "ViewModels"
+
+Inside ErrorViewModel.cs changed namespace to "namespace ClaysBookStore.Models.ViewModels"
+
+Build ClaysBooks.Models, Build successful
+
+-------------------------------------------------------------
+|6:57PM	⏰			📅 2023-10-25 			    
+-------------------------------------------------------------
+
+Went through all issues and errors was able to run program without
+any new errors
+
+Added this using ClaysBookStore.DataAccess.Data; to Startup.cs
+
+Added this ClaysBookStore.Models.ViewModels.ErrorViewModel to Error.cshtml
+
+I get a prompted message when I run the program though, doesnt 
+seem to appear anymore but the program seems to run..
 

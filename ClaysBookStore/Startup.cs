@@ -1,4 +1,5 @@
-using ClaysBookStore.Data;
+using ClaysBookStore.DataAccess;
+using ClaysBookStore.DataAccess.Data; //Added this using ClaysBookStore.DataAccess.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
