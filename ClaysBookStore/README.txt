@@ -56,3 +56,37 @@ Updated my _LoginPartial.cshtml with new code from slides
 
 Ran and tested code, no issues or errors new theme is applied.
 
+-------------------------------------------------------------
+|3:05PM	⏰			📅 2023-10-25 			    
+-------------------------------------------------------------
+
+Updated and added new css and js files provided 
+
+Added a dropdown menu in _Layout.cshtml using this code:
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">Action</a>
+        <a class="dropdown-item" href="#">Another action</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+</li>
+
+Ran and tested code, dropdown works as it should
+
+No issues or errors
+
+Renamed dropdown to "Content Management" tested to see if the 
+new title was applied.
+
+-------------------------------------------------------------
+|3:53PM	⏰			📅 2023-10-25 			    
+-------------------------------------------------------------
+
+Strating 1.4 Add Projects & Modify 
+
+
