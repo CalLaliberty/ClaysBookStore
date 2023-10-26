@@ -142,3 +142,34 @@ Added this ClaysBookStore.Models.ViewModels.ErrorViewModel to Error.cshtml
 I get a prompted message when I run the program though, doesnt 
 seem to appear anymore but the program seems to run..
 
+-------------------------------------------------------------
+|7:43PM	⏰			📅 2023-10-25 			    
+-------------------------------------------------------------
+
+Moving on to the Utilty project folder
+
+Created a class inside Utility folder called "SD.cs"
+
+Added properties to the main project "ClaysBookStore"
+
+Added properties to the main project "ClaysBookStore.DataAccess"
+
+Added a "Customers" area to Areas no issues or errors... thank god..🙏
+
+In Startup.cs pattern line of code with this code - pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
+
+Moved HomeController.cs into Areas/Customers/Controllers
+
+Deleted the Data and Models folders located in  Areas/Customers/
+
+After trail and error I've realized I created a folder called "Customers" not "Customer"
+this caused me tons!!! of greif luckily I figured it out and program ran without any issues...
+
+-------------------------------------------------------------
+|9:20PM	⏰			📅 2023-10-25 			    
+-------------------------------------------------------------
+
+Updated _ViewStart.cshtml
+
+Ran code, the theme has been applied again, let's go🎉🎉🎉            
+
