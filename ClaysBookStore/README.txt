@@ -171,5 +171,18 @@ this caused me tons!!! of greif luckily I figured it out and program ran without
 
 Updated _ViewStart.cshtml
 
-Ran code, the theme has been applied again, let's go🎉🎉🎉            
+Ran code, the theme has been applied again, let's go🎉🎉🎉  
 
+Added a new item in Areas called Admin 
+
+Added the proper view files into Admin/Views
+Deleted Data,Models and Controller folders
+
+-------------------------------------------------------------
+|9:43PM	⏰			📅 2023-10-25 			    
+-------------------------------------------------------------
+
+Ran code to verify everything is still working. 
+No issues or errors.
+
+Push code to Github.
