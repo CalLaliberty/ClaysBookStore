@@ -1,3 +1,4 @@
+using ClaysBooks.DataAccess.Repository;
 using ClaysBookStore.DataAccess;
 using ClaysBookStore.DataAccess.Data; //Added this using ClaysBookStore.DataAccess.Data;
 using Microsoft.AspNetCore.Builder;
@@ -35,6 +36,7 @@ namespace ClaysBookStore
 
             services.AddDefaultIdentity<IdentityUser>() //options => options.SignIn.RequireConfirmedAccount = true Removed this code from inside the brackets.
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddScoped<UnitOfWork, UnitOfWork>();
             services.AddControllersWithViews();
         }
 

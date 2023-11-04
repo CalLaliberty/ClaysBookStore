@@ -269,3 +269,33 @@ using System.Threading.Tasks;
 Fix any errors that appeared, ran code project builds with no issues or errors
 
 commits made and pushed to GitHub
+
+-------------------------------------------------------------
+|10:35PM	⏰			📅 2023-11-03 			    
+-------------------------------------------------------------
+
+Created a new file called ISP_Call.cs inside IRepository
+
+Removed these lines of code:
+
+using System.Threading.Tasks;
+using System.Linq;
+
+-------------------------------------------------------------
+|12:06AM	⏰			📅 2023-11-03 			    
+-------------------------------------------------------------
+
+Created a file called IUnitOfWork.cs inside IRepository
+
+Ran app just to test if any errors or issues, no problems.
+
+
+-------------------------------------------------------------
+|12:26AM	⏰			📅 2023-11-03 			    
+-------------------------------------------------------------
+
+using ClaysBooks.DataAccess.Repository; <--- Added to the top of Startup.cs
+
+Also had to change names so that it was both UnitOfWork, IUnitOfWork was causing an error...
+
+Ran program, no issues or errors.
