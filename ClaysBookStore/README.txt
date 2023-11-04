@@ -186,3 +186,56 @@ Ran code to verify everything is still working.
 No issues or errors.
 
 Push code to Github.
+
+-------------------------------------------------------------
+|8:35AM	⏰			📅 2023-11-03 			    
+-------------------------------------------------------------
+
+Build app no errors.
+
+Ran app, no issues or errors.
+
+In appsettings.json modified code from this:
+
+"Server=(localdb)\\mssqllocaldb;Database=aspnet-ClaysBookStore-D911B6ED-C22B-4602-B024-760F9BC6C2CA;Trusted_Connection=True;MultipleActiveResultSets=true"
+
+To this:
+
+"Server=(localdb)\\mssqllocaldb;Database=ClaysBookStore;Trusted_Connection=True;MultipleActiveResultSets=true"
+
+Changed default project to: ClaysBooks.DataAccess
+
+Ran this command:
+add-migration AddDefaultIdentityMigration
+
+Build succeeded.
+
+Make note of this code: To undo this action, use Remove-Migration.
+
+New file created: 20231103124130_AddDefaultIdentityMigration.cs
+
+After migration was completed, update-database
+
+Build started...
+Build succeeded.
+Done.
+
+Reviewed SQL Server Object Exploerer all files are there and match whats on pp slides
+
+Ran app to check for issues or errors
+program ran fine no problems.
+
+Added new file to ClaysBooks.Models called: Category.cs
+
+-------------------------------------------------------------
+|8:03PM	⏰			📅 2023-11-03 			    
+-------------------------------------------------------------
+
+In order for me to create the table I had to delete the file: 20231104000201_AddCategoryToDb.cs and re-run commands 
+
+Now the Categories table is made and appears in the SQL Server Object Explorer
+
+Completed 2.1 Create the DB 
+
+Check everything over once more, run code for any errors or issues if none push the code to github.
+
