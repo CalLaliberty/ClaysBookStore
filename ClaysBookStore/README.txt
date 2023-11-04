@@ -239,3 +239,33 @@ Completed 2.1 Create the DB
 
 Check everything over once more, run code for any errors or issues if none push the code to github.
 
+-------------------------------------------------------------
+|8:36PM	⏰			📅 2023-11-03 			    
+-------------------------------------------------------------
+
+Starting part 2.2 Repository
+
+In ICategoryRepository.cs removed
+
+using System.Threading.Tasks;
+using System.Linq;
+
+Also changed this:
+
+class ICategoryRepository => interface ICategoryRepository 
+
+In CategoryRepository.cs Modify
+
+Removed this:
+
+using System.Linq;
+using System.Threading.Tasks;
+
+
+-------------------------------------------------------------
+|10:35PM	⏰			📅 2023-11-03 			    
+-------------------------------------------------------------
+
+Fix any errors that appeared, ran code project builds with no issues or errors
+
+commits made and pushed to GitHub
