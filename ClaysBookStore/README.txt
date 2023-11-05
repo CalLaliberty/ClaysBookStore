@@ -299,3 +299,16 @@ using ClaysBooks.DataAccess.Repository; <--- Added to the top of Startup.cs
 Also had to change names so that it was both UnitOfWork, IUnitOfWork was causing an error...
 
 Ran program, no issues or errors.
+
+-------------------------------------------------------------
+|11:46AM	⏰			📅 2023-11-05 			    
+-------------------------------------------------------------
+
+Resovled issue in startup.cs
+
+Ran code no issues or errors.
+
+Starting part 2.3 Category CRUD
+
+Created new item in dropdown and created my Category page
+
