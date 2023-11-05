@@ -312,3 +312,107 @@ Starting part 2.3 Category CRUD
 
 Created new item in dropdown and created my Category page
 
+Ran program no issues or errors, push code to GitHub.
+
+-------------------------------------------------------------
+|1:22PM	⏰			📅 2023-11-05 			    
+-------------------------------------------------------------
+
+Modify the Index.cshtml
+
+Ran code, webpage matches whats displayed on slides.
+
+Added the new file called category.js inside wwwroot/js/category.js
+
+Ran code no issues or errors, webpage matches slides.
+
+Created Upsert.cshtml
+
+-------------------------------------------------------------
+|2:27PM	⏰			📅 2023-11-05 			    
+-------------------------------------------------------------
+
+Ran code to test for errors or issues afer updates to code.
+
+No issues or errors..
+
+-------------------------------------------------------------
+|3:02PM	⏰			📅 2023-11-05 			    
+-------------------------------------------------------------
+
+Update and created a edit and create in shared 
+
+In Shared created the following created my Razor View files:
+
+_CreateAndBackToListButton.cshtml
+
+_EditAndBackToListButton.cshtml
+
+Ran code, was able to add and update fields
+
+Now adding the delete funciton in CategoryController.cs
+
+-------------------------------------------------------------
+|3:15PM	⏰			📅 2023-11-05 			    
+-------------------------------------------------------------
+
+Tested app once more to make sure update and adding new fields works currently.
+
+Eveything seems to function as its supposed to still. 
+
+-------------------------------------------------------------
+|3:21PM	⏰			📅 2023-11-05 			    
+-------------------------------------------------------------
+
+Creating the delete fucntion 
+
+Updated code in category.js 
+
+Updates made to these block of code:
+
+<a onclick=Delete("/Admin/Category/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer">
+
+function Delete(url) {
+    swal({
+        title: "Are you sure you want to delete?",
+        text: "You will not be able to restore the data!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+    }).then((willDelete) => {
+        if (willDelete) {
+            $.ajax({
+                type: "DELETE",
+                url: url,
+                success: function (data) {
+                    if (data.success) {
+                        toastr.success(data.message);
+                        dataTable.ajax.reload();
+                    }
+                    else {
+                        toastr.error(data.message);
+                    }
+                }
+            });
+        }
+    });
+}
+
+Ran and tested code delete works as attended. Save work. 
+
+-------------------------------------------------------------
+|3:42PM	⏰			📅 2023-11-05 			    
+-------------------------------------------------------------
+
+Final review of all code, running final test and making sure everything works
+currently 
+
+-------------------------------------------------------------
+|4:13PM	⏰			📅 2023-11-05 			    
+-------------------------------------------------------------
+
+Everything works with no issues or errors!! 
+
+Completed part 2 of assignment, push to GitHub.
+
+
