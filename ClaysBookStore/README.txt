@@ -544,7 +544,16 @@ Uncommented block of code inside ProductController.cs
 
 Ran code to test for errors or issues. Api doesn't seem to appear just says loading...
 
+------------------------------------------------------------
+|6:26PM	⏰			📅 2023-11-19 			    
+-------------------------------------------------------------
 
+Added a new theme called "minty" so you can view the text better.
 
+Removed this from nav:
+
+<li class="nav-item">
+    <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a> <!--Removed text-dark-->
+</li>
 
 
