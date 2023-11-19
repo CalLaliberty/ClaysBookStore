@@ -479,7 +479,54 @@ No errors or issues, Ran code to test app
 
 No issues or errors, Pushing code to github.
 
+------------------------------------------------------------
+|2:17PM	⏰			📅 2023-11-19 			    
+-------------------------------------------------------------
 
+Starting on 3.2 Product CRUD(2)
+
+Created my Product controller 
+
+Created my ProductRepository
+
+Created my IProductRepository 
+
+Created my ProductVM 
+
+Created product.js and modified code 
+
+Modified code and commented it:
+
+// use HTTP POST to define the post-action method
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+
+        //public IActionResult Upsert(Product product)
+        //{
+        //    if (ModelState.IsValid)  // checks all validation in the model (e.g. Name Required) to increase security
+        //    {
+        //        if (product.Id == 0)
+        //        {
+        //            _unitOfWork.Product.Add(product);
+
+        //        }
+        //        else
+        //        {
+        //            _unitOfWork.Product.Update(product);
+        //        }
+
+        //        _unitOfWork.Save();
+        //        return RedirectToAction(nameof(Index));
+
+        //    }
+        //    return View(product);
+        //}
+
+Added it under dropdown 
+
+------------------------------------------------------------
+|3:57PM	⏰			📅 2023-11-19 			    
+-------------------------------------------------------------
 
 
 
