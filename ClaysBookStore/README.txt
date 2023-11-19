@@ -446,8 +446,38 @@ Ran code to test my app and make sure Covertpye appears and works correctly.
 No issues or errors. Pushing to GitHub
 
 ------------------------------------------------------------
-|12:05PM	⏰			📅 2023-11-19 			    
+|12:25PM	⏰			📅 2023-11-19 			    
 -------------------------------------------------------------
+
+Starting on 3.2 Product CRUD.
+
+Testing app to make sure everything still works correctly. 
+
+Created new class in models called Product.
+
+Created my addProductToDb to migrations folder:
+
+20231119175036_addProductToDb.cs
+
+update-database, build succeeded Products shows up in SQL viewer.
+
+added addValidationToProduct: 20231119180452_addValidationToProduct.cs
+
+------------------------------------------------------------
+|1:11PM	⏰			📅 2023-11-19 			    
+-------------------------------------------------------------
+
+Added ProductRepository to Repository folder
+
+Added IProductRepository to IRepository folder
+
+Updated code in both files
+
+Added Product to UnitOfWork and IUnitOfWork
+
+No errors or issues, Ran code to test app 
+
+No issues or errors, Pushing code to github.
 
 
 
