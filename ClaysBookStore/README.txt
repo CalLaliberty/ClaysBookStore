@@ -528,6 +528,23 @@ Added it under dropdown
 |3:57PM	⏰			📅 2023-11-19 			    
 -------------------------------------------------------------
 
+3.2 Product CRUD 
+
+Created Upsert.cs for products
+
+Used code from assignment 2 file
+
+Singed up for tiny.cloud and applied to my app.
+
+Ran the app to test for errors.
+
+Added folder in wwwroot => images/products
+
+Uncommented block of code inside ProductController.cs
+
+Ran code to test for errors or issues. Api doesn't seem to appear just says loading...
+
+
 
 
 

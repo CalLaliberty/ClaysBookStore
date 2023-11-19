@@ -58,29 +58,29 @@ namespace ClaysBookStore.Areas.Admin.Controllers
         }
 
         // use HTTP POST to define the post-action method
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
 
-        //public IActionResult Upsert(Product product)
-        //{
-        //    if (ModelState.IsValid)  // checks all validation in the model (e.g. Name Required) to increase security
-        //    {
-        //        if (product.Id == 0)
-        //        {
-        //            _unitOfWork.Product.Add(product);
+        public IActionResult Upsert(Product product)
+        {
+            if (ModelState.IsValid)  // checks all validation in the model (e.g. Name Required) to increase security
+            {
+                if (product.Id == 0)
+                {
+                    _unitOfWork.Product.Add(product);
 
-        //        }
-        //        else
-        //        {
-        //            _unitOfWork.Product.Update(product);
-        //        }
+                }
+                else
+                {
+                    _unitOfWork.Product.Update(product);
+                }
 
-        //        _unitOfWork.Save();
-        //        return RedirectToAction(nameof(Index));
+                _unitOfWork.Save();
+                return RedirectToAction(nameof(Index));
 
-        //    }
-        //    return View(product);
-        //}
+            }
+            return View(product);
+        }
 
         // API calls here
         #region API CALLS
