@@ -415,4 +415,42 @@ Everything works with no issues or errors!!
 
 Completed part 2 of assignment, push to GitHub.
 
+-------------------------------------------------------------
+|11:49AM	⏰			📅 2023-11-19 			    
+-------------------------------------------------------------
+
+Created my CoverType Model
+
+Created CoverTypeRepository
+
+Createed ICoverTypeRepository
+
+Add CoverType to UnitOfWork and IUnitOfWork
+
+Created migration: 20231119164821_AddCoverTypeToDb.cs
+
+Updated-databae, Covertype appears in SQL Viewer. 
+
+------------------------------------------------------------
+|11:52AM	⏰			📅 2023-11-19 			    
+-------------------------------------------------------------
+
+Created the controller for CoverType with all required action methods 
+
+Added it to navbar, modified the layout.
+
+Added covertype to index view and added it to the js file.
+
+Ran code to test my app and make sure Covertpye appears and works correctly.
+
+No issues or errors. Pushing to GitHub
+
+------------------------------------------------------------
+|12:05PM	⏰			📅 2023-11-19 			    
+-------------------------------------------------------------
+
+
+
+
+
 
