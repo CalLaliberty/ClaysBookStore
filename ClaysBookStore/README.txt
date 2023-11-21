@@ -556,4 +556,22 @@ Removed this from nav:
     <a class="nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a> <!--Removed text-dark-->
 </li>
 
+------------------------------------------------------------
+|7:47PM	⏰			📅 2023-12-19 			    
+-------------------------------------------------------------
+
+Getting error when trying to create a product "System.InvalidOperationException"
+
+This block of code inside ProductController.cs:
+
+public IActionResult GetAll()
+        {
+            // return NotFound();
+            var allObj = _unitOfWork.Product.GetAll(includeProperties:"Category,CoverType");   // Included Category and CoverType
+            return Json(new { data = allObj });
+        }
+
+This had a space and was "Category, CoverType" changed to "Category,CoverType"
+
+Ran and tested app no issues or errors after removal of space. 
 

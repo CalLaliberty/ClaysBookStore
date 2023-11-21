@@ -89,7 +89,7 @@ namespace ClaysBookStore.Areas.Admin.Controllers
         public IActionResult GetAll()
         {
             // return NotFound();
-            var allObj = _unitOfWork.Product.GetAll(includeProperties:"Category, CoverType");   // Included Category and CoverType
+            var allObj = _unitOfWork.Product.GetAll(includeProperties:"Category,CoverType");   // Included Category and CoverType
             return Json(new { data = allObj });
         }
 
