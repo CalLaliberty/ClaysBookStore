@@ -588,3 +588,13 @@ Fixed error in Product/Upsert.cshtml
 </div>
 
 Had CategoriesId instead of CoverTypeId
+
+------------------------------------------------------------
+|2:35PM	⏰			📅 2023-11-23 			    
+-------------------------------------------------------------
+
+Fixed error with creating products, Old migration had issue with CoverTypeId was CategoryId
+
+Switched this out for correct Id create a new migration => 20231123192434_FixedProductToDb.cs
+
+Ran code fixed issue, but found a new one relating to price not appearing. 
