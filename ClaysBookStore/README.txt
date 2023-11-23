@@ -597,4 +597,18 @@ Fixed error with creating products, Old migration had issue with CoverTypeId was
 
 Switched this out for correct Id create a new migration => 20231123192434_FixedProductToDb.cs
 
-Ran code fixed issue, but found a new one relating to price not appearing. 
+Ran code fixed issue, but found a new one relating to price not appearing.
+
+------------------------------------------------------------
+|4:13PM	⏰			📅 2023-11-23 			    
+-------------------------------------------------------------
+
+Had issues with "price" and "category.name" not showing up in created products,
+resolved issue by changing names to "listPrice" and "category.name" 
+
+
+            { "data": "title", "width": "15%" },
+            { "data": "isbn", "width": "15%" },
+ =====>     { "data": "listPrice", "width": "15%" },
+            { "data": "author", "width": "15%" },
+ =====>     { "data": "category.name", "width": "15%" },
