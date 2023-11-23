@@ -557,7 +557,7 @@ Removed this from nav:
 </li>
 
 ------------------------------------------------------------
-|7:47PM	⏰			📅 2023-12-19 			    
+|7:47PM	⏰			📅 2023-11-19 			    
 -------------------------------------------------------------
 
 Getting error when trying to create a product "System.InvalidOperationException"
@@ -575,3 +575,16 @@ This had a space and was "Category, CoverType" changed to "Category,CoverType"
 
 Ran and tested app no issues or errors after removal of space. 
 
+------------------------------------------------------------
+|1:52PM	⏰			📅 2023-11-23 			    
+-------------------------------------------------------------
+
+Fixed error in Product/Upsert.cshtml
+
+<div class="col-8">
+                    @Html.DropDownListFor(m => m.Product.CoverTypeId, Model.CoverTypeList, "-Select a Cover Type",
+                   new { @class = "form-control" })
+                    <span asp-validation-for="Product.CoverTypeId" class="text-danger"></span>
+</div>
+
+Had CategoriesId instead of CoverTypeId
