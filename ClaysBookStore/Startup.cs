@@ -37,7 +37,9 @@ namespace ClaysBookStore
 
             services.AddDefaultIdentity<IdentityUser>() //options => options.SignIn.RequireConfirmedAccount = true Removed this code from inside the brackets.
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();   
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IProductRepository, ProductRepository>();    // Added this is part 4 
+
             services.AddControllersWithViews();
         }
 

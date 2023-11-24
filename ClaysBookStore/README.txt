@@ -612,3 +612,84 @@ resolved issue by changing names to "listPrice" and "category.name"
  =====>     { "data": "listPrice", "width": "15%" },
             { "data": "author", "width": "15%" },
  =====>     { "data": "category.name", "width": "15%" },
+
+
+------------------------------------------------------------
+|3:33PM	⏰			📅 2023-11-24 			    
+-------------------------------------------------------------
+
+Started on working on trying to display products on the main index page.
+
+Changes and modifications to code so far:
+
+HomeController.cs
+
+added this using statement ==> using ClaysBooks.DataAccess.Repository.IRepository;
+
+private readonly IProductRepository _productRepository;
+
+public HomeController(ILogger<HomeController> logger) ===> public HomeController(ILogger<HomeController> logger, IProductRepository productRepository)
+
+Added under Logger ===> _productRepository = productRepository;
+
+Inside of public IActionResult Index() ===> var products = _productRepository.GetAll(); return View(products);
+
+Index modifications:
+
+Old index 
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+Updated Index to display products:
+
+@model IEnumerable<ClaysBooks.Models.Product>
+
+<div class="row pb-3 backgroundWhite">
+    @foreach (var product in Model)
+    {
+<div class="col-lg-3 col-md-6">
+    <div class="row p-2">
+        <div class="col-12  p-1" style="border:1px solid #008cba; border-radius: 5px;">
+            <div class="card" style="border:0px;">
+                <img src="@product.ImageUrl" class="card-img-top rounded" />
+                <div class="pl-1">
+                    <p class="card-title h5"><b style="color:#2c3e50">@product.Title</b></p>
+                    <p class="card-title text-primary">by <b>@product.Author</b></p>
+                </div>
+                <div style="padding-left:5px;">
+                    <p>List Price: <b class="">$ @product.ListPrice.ToString("0.00")</b></p>
+                </div>
+            </div>
+            <div>
+                <a asp-action="Details" class="btn btn-primary form-control" asp-route-id="@product.Id">Details</a>
+            </div>
+        </div>
+    </div>
+</div>}
+</div>
+
+Startup.cs Modifications:
+
+public void ConfigureServices(IServiceCollection services) <=== changes made under here.
+
+Added this inside my code:
+
+services.AddScoped<IProductRepository, ProductRepository>();
+
+
+------------------------------------------------------------
+|3:41PM	⏰			📅 2023-11-24 			    
+-------------------------------------------------------------
+
+Check for any issues or errors, run code and test.
+
+Products display on index page, still need to update the display and make sure images appear as well.
+
+Final test for program, no issues or errors. 

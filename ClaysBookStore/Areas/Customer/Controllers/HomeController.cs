@@ -1,4 +1,5 @@
-﻿using ClaysBookStore.Models.ViewModels;
+﻿using ClaysBooks.DataAccess.Repository.IRepository; // Added in part 4 to display products
+using ClaysBookStore.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -13,15 +14,18 @@ namespace ClaysBookStore.Area.Customer.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProductRepository _productRepository; // <== Added to display products 
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProductRepository productRepository)
         {
             _logger = logger;
+            _productRepository = productRepository; // <== Added to display products
         }
 
         public IActionResult Index()
         {
-            return View();
+            var products = _productRepository.GetAll(); // <== Added to display products
+            return View(products);  // Added "products" inside View 
         }
 
         public IActionResult Privacy()
