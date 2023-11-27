@@ -693,3 +693,112 @@ Check for any issues or errors, run code and test.
 Products display on index page, still need to update the display and make sure images appear as well.
 
 Final test for program, no issues or errors. 
+
+------------------------------------------------------------
+|1:47PM	⏰			📅 2023-11-27 			    
+-------------------------------------------------------------
+
+Now applying the code to make images appear on the homepage, as well as save in my images/products folder in my application
+
+Code modifications made to the following: 
+
+ProductController.cs
+
+added this using statement => using System.IO;
+
+This block of code added under my HttpPOST:
+
+ public IActionResult Upsert(ProductVM productVM)
+        {
+            if (ModelState.IsValid)
+            {
+                string webRootPath = _hostEvironment.WebRootPath;
+                var files = HttpContext.Request.Form.Files;
+                if (files.Count > 0)
+                {
+                    string fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(webRootPath, @"images\products");
+                    var extension = Path.GetExtension(files[0].FileName);
+
+                    if (productVM.Product.ImageUrl != null)
+                    {
+                        // this is an edit and we need to remove old image
+                        var imagePath = Path.Combine(webRootPath, productVM.Product.ImageUrl.TrimStart('\\'));
+                        if (System.IO.File.Exists(imagePath))
+                        {
+                            System.IO.File.Delete(imagePath);
+                        }
+                    }
+                    using (var filesStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
+                    {
+                        files[0].CopyTo(filesStreams);
+                    }
+                    productVM.Product.ImageUrl = @"\images\products\" + fileName + extension;
+                }
+                else
+                {
+                    // update when they do not change the image
+                    if (productVM.Product.Id != 0)
+                    {
+                        Product objFromDb = _unitOfWork.Product.Get(productVM.Product.Id);
+                        productVM.Product.ImageUrl = objFromDb.ImageUrl;
+                    }
+                }
+
+                if (productVM.Product.Id == 0)
+                {
+                    _unitOfWork.Product.Add(productVM.Product);
+                }
+                else
+                {
+                    _unitOfWork.Product.Update(productVM.Product);
+                }
+                _unitOfWork.Save();
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                productVM.CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+                });
+                productVM.CoverTypeList = _unitOfWork.CoverType.GetAll().Select(i => new SelectListItem
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+                });
+                if (productVM.Product.Id != 0)
+                {
+                    productVM.Product = _unitOfWork.Product.Get(productVM.Product.Id);
+                }
+            }
+            return View(productVM);
+        }
+
+This block of code added to product => Upsert.cs
+
+  @if (Model.Product.Id != 0)
+        {
+            <div class="col-3 offset-1 pt-4">
+                <img src="@Model.Product.ImageUrl" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+            </div>
+        }
+    </div>
+
+also added miner fix to value, instead of one "=" changed to "==" that seemed to resolve an issue.
+
+Ran appilcation for any issues or errors. 
+
+Application runs as expected, images now display on the homepage and are saved in my images/products folder.
+
+------------------------------------------------------------
+|2:10PM	⏰			📅 2023-11-27 			    
+-------------------------------------------------------------
+
+Final test to make sure everything works as expected and nothing breaks.
+
+Application runs as expected and images, category, and price appear on homepage.
+
+Save code, commit and push to GitHub. 
+
