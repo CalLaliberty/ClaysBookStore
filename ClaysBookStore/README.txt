@@ -802,3 +802,9 @@ Application runs as expected and images, category, and price appear on homepage.
 
 Save code, commit and push to GitHub. 
 
+
+------------------------------------------------------------
+|10:03PM	⏰			📅 2023-11-27 			    
+-------------------------------------------------------------
+
+Final test of application, added all images to the homepage and images saved in the images/products
