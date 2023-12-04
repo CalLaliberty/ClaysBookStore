@@ -808,3 +808,108 @@ Save code, commit and push to GitHub.
 -------------------------------------------------------------
 
 Final test of application, added all images to the homepage and images saved in the images/products
+
+------------------------------------------------------------
+|12:25PM	⏰			📅 2023-12-04 			    
+-------------------------------------------------------------
+
+Creating seed data to populate my homepage. 
+
+Created a class called SeedData with this code:
+
+using ClaysBooks.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.IO;
+using System.Linq;
+
+namespace ClaysBookStore.DataAccess.Data
+{
+    public static class SeedData
+    {
+        public static void Initialize(IServiceProvider serviceProvider)
+        {
+            using (var scope = serviceProvider.CreateScope())
+            {
+                var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+                if (context.Products.Any())
+                {
+                    return;
+                }
+
+                context.Products.AddRange(
+                    new Product
+                    {
+                        Title = "Batman Hush",
+                        Description = "Batman Hush comic",
+                        ISBN = "9788573512441",
+                        Author = "Jeph Loeb",
+                        ListPrice = 25.99,
+                        ImageUrl = "/images/products/BatmanHush.jpg",
+                        CategoryId = 36,
+                        CoverTypeId = 14
+                    },
+                    new Product
+                    {
+                        Title = "Batman The Long Halloween",
+                        Description = "Batman The Long Halloween comic",
+                        ISBN = "9781840230543",
+                        Author = "Jeph Loeb",
+                        ListPrice = 25.99,
+                        ImageUrl = "/images/products/BatmanLongHalloween.jpg",
+                        CategoryId = 36,
+                        CoverTypeId = 14
+                    },
+                    new Product
+                    {
+                        Title = "Batman The Killing Joke",
+                        Description = "Batman The Killing Joke comic",
+                        ISBN = "9780930289454",
+                        Author = "Alan Moore",
+                        ListPrice = 25.99,
+                        ImageUrl = "/images/products/BatmanKillingJoke.jpg",
+                        CategoryId = 36,
+                        CoverTypeId = 14
+                    }
+                );
+
+                context.SaveChanges();
+            }
+        }
+    }
+}
+
+
+Code modified here:
+
+Startup.cs
+
+added this code to the bottom:
+
+SeedData.Initialize(app.ApplicationServices);
+
+Added my three images to wwwroot/images/products
+
+BatmanHush.jpg, BatmanKillingJoke.jpg, BatmanLongHalloween.jpg
+
+Ran and tested code, all three books appear on homepage only issue is a used the same image for book 2 will try to resolve this 
+issue and update database.
+
+------------------------------------------------------------
+|1:04PM	⏰			📅 2023-12-04 			    
+-------------------------------------------------------------
+
+Can't seem to resolve the issue with the image, I don't want to delete my products table as it could 
+cause even more issues.
+
+Going to leave it as is in order to make sure my app runs and displays my three books.
+
+------------------------------------------------------------
+|1:04PM	⏰			📅 2023-12-04 			    
+-------------------------------------------------------------
+
+Final test of app, no issues or errors. 
+
+

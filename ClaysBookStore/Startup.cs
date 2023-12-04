@@ -72,6 +72,8 @@ namespace ClaysBookStore
                     pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            SeedData.Initialize(app.ApplicationServices);
         }
     }
 }
