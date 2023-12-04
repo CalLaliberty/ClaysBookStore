@@ -1,3 +1,3 @@
 # ClaysBookStore
 
-I've started on the task of building an ASP.NET application named 'ClaysBookStore.' As I make my way through the instructions and diligently follow the tutorial, I'm steadily progressing through the first part of the assignment. 
+I've developed a robust MVC (Model-View-Controller) ASP.NET application named ClaysBookStore, which aims to provide a seamless platform for managing a collection of books. The application is designed to efficiently handle creating, storing, and retrieving book data through a well-organized architecture. 
